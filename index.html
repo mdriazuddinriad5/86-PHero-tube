@@ -11,9 +11,33 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'focus-btn-bg':'#FF1F3D',
+                        'faded-btn-bg':'#25252533',
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 
-<body>
+<body class="container mx-auto w-11/12">
+
+    <header>
+        <nav class="flex justify-between mt-12">
+            <div><img src="./images/Logo.png" alt=""></div>
+            <div class="btn px-5 py-2 faded-btn-bg"><button>Sort by view</button></div>
+            <div class="btn px-5 py-2 bg-focus-btn-bg"><button>Blog</button></div>
+        </nav>
+        <hr class="my-8">
+    </header>
+    <main></main>
 
 
     <!-- Linking Js file -->
