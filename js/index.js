@@ -6,6 +6,7 @@ blog.addEventListener('click',()=>{
     window.location.href= 'blog.html';
 })
 
+
 /* Load categories */
 const loadCategories = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
