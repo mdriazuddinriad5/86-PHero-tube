@@ -45,10 +45,10 @@
 <body class="container mx-auto w-11/12">
 
     <header>
-        <nav class="flex justify-between mt-12">
+        <nav class="flex justify-between gap-4 items-center mt-12">
             <div><img src="./images/Logo.png" alt=""></div>
-            <div onclick="sortByView()" id="sort-btn" class="btn px-5 py-2 faded-btn-bg text-nav-color text-lg font-medium"><button>Sort by view</button></div>
-            <div id="blog" class="btn px-5 py-2 bg-focus-btn-bg"><button>Blog</button></div>
+            <div onclick="sortByView()" id="sort-btn" class="btn px-2 md:px-5 py-2 faded-btn-bg text-nav-color text-sm md:text-lg font-medium"><button>Sort by view</button></div>
+            <div id="blog" class="btn px-5 py-2 bg-focus-btn-bg text-white"><button>Blog</button></div>
         </nav>
         <hr class="my-8">
     </header>
@@ -57,12 +57,12 @@
 
         <!-- category container section -->
 
-        <section id="category-container" class="mt-8 mb-10 flex justify-center gap-6">
+        <section id="category-container" class="mt-8 mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-6">
 
         </section>
 
         <!-- card container -->
-        <section id="card-container" class="grid grid-cols-4 gap-6 mb-28">
+        <section id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 md:mb-12 lg:mb-20">
            
         </section>
 
