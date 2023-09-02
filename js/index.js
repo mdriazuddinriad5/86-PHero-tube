@@ -67,7 +67,7 @@ const showCard = contents => {
         div.classList = `card bg-gray-100 shadow-xl`;
         div.innerHTML = `
             <figure><img class="h-52 w-full" src="${content?.thumbnail}" alt="Shoes" /></figure>
-            <p class="absolute mt-40 text-white text-right font-normal text-xs ml-[186px] md:ml-56 lg:ml-56">${content.others?.posted_date ? `<span class="p-1 bg-black">${time}</span>`  : ''}</p>
+            <p class="absolute mt-44 right-4 text-white text-right font-normal text-xs">${content.others?.posted_date ? `<span class="p-1 bg-black">${time}</span>`  : ''}</p>
             <div class="flex gap-3 mt-5">
             <img class="h-10 w-10 rounded-full" src="${content.authors[0].profile_picture}" alt="">
                  <div>
