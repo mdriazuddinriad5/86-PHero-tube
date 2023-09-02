@@ -1,6 +1,12 @@
 const cardContainer = document.getElementById('card-container');
 const noContentContainer = document.getElementById('no-content');
+let currentCategory=0;
+const blog= document.getElementById('blog');
+blog.addEventListener('click',()=>{
+    window.location.href= 'blog.html';
+})
 
+/* Load categories */
 const loadCategories = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
     const data = await res.json();
@@ -8,6 +14,7 @@ const loadCategories = async () => {
     displayCategories(categories);
 }
 
+/* Display categories */
 const displayCategories = categories => {
     const categoryContainer = document.getElementById('category-container');
     categories.forEach(category => {
@@ -17,19 +24,28 @@ const displayCategories = categories => {
     <button onclick="loadContents('${category.category_id}')" class="btn px-5 py-1 text-base  font-inter font-medium text-category-color">${category.category}</button>
     `
         categoryContainer.appendChild(div);
+
     })
 }
 
-
-const loadContents = async (id) => {
-    // console.log(id);
+/* Load contents from api through id */
+const loadContents = async (id, isSortedByViews) => {
+    
+    currentCategory=id;
+    
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
     const contents = data.data;
 
     if (contents.length !== 0) {
-        showCard(contents);
-        console.log(contents);
+        /* Sorting in descending order */
+        if(isSortedByViews){
+            contents.sort((a,b)=>parseInt(b.others.views)-parseInt(a.others.views))
+            showCard(contents);
+        }else{
+            showCard(contents);
+        }
+    
     } else {
         showErrorMessage();
     }
@@ -38,14 +54,13 @@ const loadContents = async (id) => {
 
 }
 
+/* Showing data from api to card using dynamic html */
 const showCard = contents => {
 
     cardContainer.textContent = ``;
     noContentContainer.textContent = ``;
     contents.forEach(content => {
-        // console.log(content);
-
-
+      
         const div = document.createElement('div');
         div.classList = `card bg-gray-100 shadow-xl`;
         div.innerHTML = `
@@ -65,12 +80,10 @@ const showCard = contents => {
             `
         cardContainer.appendChild(div);
 
-
-
     })
 }
 
-
+/* Error message shown to empty category */
 const showErrorMessage = () => {
 
     cardContainer.textContent = ``;
@@ -91,6 +104,13 @@ const showErrorMessage = () => {
 
 
 }
+
+
+/* Sorting by views */
+const sortByView=()=>{
+    loadContents(currentCategory,true);
+}
+
 
 
 loadCategories();

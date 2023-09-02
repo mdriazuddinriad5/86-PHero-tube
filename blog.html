@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/download.png" type="image/x-icon">
+    <title>Blog</title>
+
+
+    <!-- Font setup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+
+    <!-- Installing daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-center text-5xl font-bold mt-8">Blog Questions</h1>
+    </header>
+    <main class="container w-11/12 mt-8 mx-auto">
+        <p class="text-3xl font-semibold underline">The scope of var, let, and const:</p>
+        <p class="mt-2 text-justify text-xl font-normal">Scope refers to the accessible zone of a variable. In the case
+            of var, a variable declared using var, whether
+            locally or globally, is hoisted to the top of the function or script. This means it can be accessed from
+            anywhere within the function or the script. <br>
+            In contrast, a variable declared with let is limited in scope to the function or script in which it is
+            declared. If it is declared within a function, it is only accessible within that specific function. However,
+            when a variable declared with let is declared globally, its scope extends to the entire script. <br>
+            In terms of scope, const behaves similarly to let. The key difference is that any variable declared with
+            const cannot have its value updated once it has been assigned.</p>
+        <p class="text-3xl font-semibold underline mt-4">The use cases of null and undefined:</p>
+        <p class="text-xl font-medium underline mt-2">Undefined:</p>
+        <p class="mt-2 text-justify text-xl font-normal">1. A variable that is declared but not initiated is assigned
+            the undefined value. <br>
+            2. A function with no explicit return will return undefined. <br>
+            3. If value of parameter of a function is not passed then it will return undefined. <br>
+            4. Trying to access of a property of an object that is missing, will return undefined. <br>
+            5. Trying to access index value of an array that is out of the index range of that array will return
+            undefined. <br>
+        </p>
+        <p class="text-xl font-medium underline mt-2">Null:</p>
+        <p class="mt-2 text-justify text-xl font-normal">1. A variable can be declared with null value. <br>
+            2. In conditional statement null is used to avoid error. <br>
+            3. To clear reference of an object property null is used. <br>
+            4. In object null is used to represent empty fields. <br>
+            5. In array null is used to indicate missing value. <br>
+        </p>
+
+        <p class="text-3xl font-semibold underline mt-4">What do I mean by REST API?</p>
+        <p class="mt-2 mb-8 text-justify text-xl font-normal">REST stands for Representative State Transfer. Rest API is a
+            standardized software architecture style. It's all about communication between a client and a server. The
+            main building block of a REST API is sending a request to the server and returning a response to the client.
+            In the request, CRUD (Create, Read, Update, Delete) operations are performed. In a REST API, the primary
+            things for communicating with the client-server are CRUD operations. The equivalent of CRUD in a REST API is
+            HTTP methods. In these methods, POST, GET, PUT, and DELETE are equivalent to the CRUD operations. It follows
+            a stateless client-server model, which means the server doesn't store any information about the client's
+            state between requests. It's scalable and easy to maintain, making it suitable for applications like
+            streaming services and chat applications.</p>
+    </main>
+
+</body>
+
+</html>
